@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Beautiful Formee ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffe6f0,#fff0f5,#f6e6ff);
+overflow-x:hidden;
+color:#444;
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:-1;
+}
+
+.heart{
+position:absolute;
+color:#ff6b9d;
+animation:float 8s linear infinite;
+font-size:20px;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hero h1{
+font-size:4rem;
+font-family:'Dancing Script',cursive;
+color:#ff4d88;
+}
+
+.hero p{
+font-size:1.2rem;
+margin-top:15px;
+}
+
+.btn{
+margin-top:25px;
+padding:14px 30px;
+border:none;
+border-radius:50px;
+background:#ff4d88;
+color:white;
+cursor:pointer;
+font-size:1rem;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+}
+
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:40px;
+color:#ff4d88;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.love-letter{
+background:white;
+padding:30px;
+border-radius:20px;
+max-width:800px;
+margin:auto;
+line-height:1.8;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.quiz-box{
+max-width:600px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.quiz-box button{
+margin:10px;
+padding:12px 20px;
+border:none;
+border-radius:20px;
+background:#ff4d88;
+color:white;
+cursor:pointer;
+}
+
+.result{
+margin-top:20px;
+font-size:1.2rem;
+font-weight:bold;
+}
+
+.game{
+text-align:center;
+}
+
+.score{
+font-size:1.5rem;
+margin-bottom:20px;
+}
+
+#gameArea{
+position:relative;
+height:400px;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.catch-heart{
+position:absolute;
+font-size:35px;
+cursor:pointer;
+}
+
+.surprise{
+text-align:center;
+}
+
+#surpriseMessage{
+margin-top:30px;
+font-size:2rem;
+font-family:'Dancing Script';
+color:#ff4d88;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#fff;
+margin-top:50px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery div{
+height:250px;
+background:#ffd9e8;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:4rem;
+}
+
+.gujarati{
+font-size:1.3rem;
+color:#c2185b;
+font-weight:600;
+text-align:center;
+margin-top:15px;
+}
+
+.teddy{
+position:fixed;
+bottom:20px;
+right:20px;
+font-size:80px;
+animation:bounce 2s infinite;
+z-index:999;
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+@media (max-width: 768px){
+
+.hero h1{
+    font-size: 2.5rem;
+}
+
+.hero p{
+    font-size: 1rem;
+}
+
+.hero-content{
+    padding: 25px;
+}
+
+.section-title{
+    font-size: 2rem;
+}
+
+.photo-card img{
+    height: 320px;
+}
+
+.love-letter{
+    padding: 20px;
+}
+
+.teddy{
+    font-size: 60px;
+}
+
+.btn{
+    width: 100%;
+    max-width: 280px;
+}
+
+}
+
+</style>
+</head>
+<body>
+<div class="teddy">
+🧸
+</div>
+
+<button onclick="showLove()">
+💖 Click Here Formee
+</button>
+
+
+
+<h1 id="loveText"></h1>
+<div class="hearts" id="hearts"></div>
+
+<section class="hero">
+<div class="hero-content">
+<h1>For Formee ❤️</h1>
+<p>You are my favorite notification, favorite smile and favorite person.</p>
+
+<p class="gujarati">
+તું મારા જીવનની સૌથી સુંદર વ્યક્તિ છે ❤️
+</p>
+
+<button class="btn" onclick="window.scrollTo({top:window.innerHeight,behavior:'smooth'})">
+Start Our Love Story
+</button>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Why I Love You 💖</h2>
+
+<div class="cards">
+<div class="card">😊 Your Smile Brightens My Day</div>
+<div class="card">🌸 Your Kind Heart</div>
+<div class="card">🥰 The Way You Care</div>
+<div class="card">✨ Every Moment Feels Special With You</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Love Letter 💌</h2>
+
+<div class="love-letter">
+Dear Formee,
+
+Every day with you feels like a beautiful dream. Your smile makes my heart skip a beat and your presence makes every moment brighter.
+
+તારી સાથે વિતાવેલો દરેક ક્ષણ મારા માટે ખાસ છે.
+
+You are my happiness, my peace, and my favorite chapter.
+
+Forever yours ❤️
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Our Memories 📸</h2>
+
+<div class="gallery">
+<div>💕</div>
+<div>🌹</div>
+<div>🥰</div>
+<div>❤️</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Cute Love Quiz 🧠</h2>
+
+<div class="quiz-box">
+<h3>Who is the cutest person in the world?</h3>
+
+<button onclick="showResult()">Formee ❤️</button>
+<button onclick="showResult()">Still Formee ❤️</button>
+
+<div class="result" id="quizResult"></div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Catch The Hearts Game 🎮</h2>
+
+<div class="game">
+
+<div class="score">
+Score: <span id="score">0</span>
+</div>
+
+<div id="gameArea"></div>
+
+</div>
+</section>
+
+<section class="surprise">
+<h2 class="section-title">Special Surprise 🎁</h2>
+
+<button class="btn" onclick="surprise()">
+Click Me Formee ❤️
+</button>
+
+<div id="surpriseMessage"></div>
+</section>
+
+<footer>
+Made With Endless Love For Formee ❤️
+</footer>
+
+<script>
+
+for(let i=0;i<30;i++){
+let heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"%";
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+document.getElementById("hearts").appendChild(heart);
+}
+
+function showResult(){
+document.getElementById("quizResult").innerHTML=
+"Correct Answer: Formee is the cutest ❤️";
+}
+
+function surprise(){
+document.getElementById("surpriseMessage").innerHTML=
+"Formee, I Love You More Than Words Can Explain ❤️🌙✨";
+}
+
+let score=0;
+const gameArea=document.getElementById("gameArea");
+
+function createHeart(){
+
+let heart=document.createElement("div");
+heart.classList.add("catch-heart");
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*90+"%";
+heart.style.top=Math.random()*80+"%";
+
+heart.onclick=function(){
+score++;
+document.getElementById("score").innerText=score;
+heart.remove();
+};
+
+gameArea.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},2000);
+}
+
+setInterval(createHeart,800);
+
+</script>
+
+</body>
+</html>
